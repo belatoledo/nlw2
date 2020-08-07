@@ -35,7 +35,7 @@ body {
 }
 
 body {
-    background-color: var(--color-background);
+    background: var(--color-background);
     display: flex;
     align-items: center; /*só funciona com display flex, alinha os elemntos ao centro */
     justify-content: center; /*só funciona com display flex e justifica o conteúdo */
@@ -52,7 +52,7 @@ textarea {
 
 #container {
     width: 90vw; /*view width = largura visível*/
-    max-width: 700px;  
+    max-width: 700px; 
 }
 
 @media (min-width: 700px) {  /*acima de 700px */
