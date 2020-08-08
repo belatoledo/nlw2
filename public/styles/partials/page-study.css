@@ -1,0 +1,251 @@
+#page-study #container {
+    width: 100vw;
+    height: 100vh;
+
+}
+
+#search-teachers {
+    margin-top: 3.2rem;
+
+}
+
+#search-teachers label {
+    color: var(--color-text-in-primary);
+
+}
+
+#search-teachers .select-block {
+    margin-bottom: 1.4rem; /*separação entre os selects*/
+}
+
+#search-teachers button {
+    width: 100%;
+    height: 5.6rem;
+    background: var(--color-secondary);
+    color: var(--color-button-text);
+    border: 0; /*tira a borda padrão do button*/
+    border-radius: 0.8rem;
+    cursor: pointer;
+    font: 700 1.6rem Archivo;
+    
+    display: flex; /*para garantia de alinhamento do botão ao centro*/
+    align-items: center;
+    justify-content: center;
+
+    transition: background 0.2s;
+
+    margin-top: 3.2rem; /*separa o button dos outros itens*/
+}
+
+#search-teachers button:hover {
+    background-color: var(--color-secondary-dark);
+}
+
+
+.select-block label,
+.input-block label {
+    font-size: 1.4rem;
+    color: var(--color-text-complement);
+}
+
+.input-block input,
+.select-block select { /*seletor de horário*/
+    width: 100%;
+    height: 5.6rem; /*espaçamento de altura entre os elementos*/
+    margin-top: 0.8rem; /*separação do top pro label */
+    border-radius: 0.8rem;
+    background: var(--color-input-background);
+    border: 1px solid var(--color-line-in-white);
+    outline: 0; /*retira a cor forte da lacuna de seleção*/
+    padding: 0 1.6rem; /*preenchimento das laterais dentro da borda*/
+    font: 1.6rem Archivo;   
+}
+
+.input-block {
+    position: relative;
+    
+}
+
+.input-block:focus-within::after { /*cria um pseudo elemento no HMTL quando um elemento entra em "foco" (quando seleciona o campo com o cursor)*/
+    content: " ";
+    width: calc(100% - 3.2rem); /*faz o calculo que subtrai 3.2rem de 100% da width do input para formar uma linha*/
+    height: 2px;
+    background: var(--color-primary-light);
+
+    position: absolute; /*permite posicionar qualquer elemento de acordo com o elemento pai que tenha um position diferente de static*/
+    left: 1.6rem;
+    bottom: 0;
+}
+
+#page-study main{
+    margin: 3.2rem auto;
+    width: 90%;
+}
+
+.teacher-item {
+    background-color: var(--color-box-base);
+    border: 1px solid var(--color-line-in-white);
+    border-radius: 0.8rem;
+    margin-top: 2.4rem;
+
+}
+
+.teacher-item header {
+    padding: 3.2rem 2rem; /* 3.2rem em cima e em baixo e 2rem nas laterais */
+    display: flex; /* coloca um do lado do outro inline */
+    align-items: center;
+}
+
+.teacher-item header img {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%; /*faz o formato bolinha na imagem quando esta é um quadrado é perfeito */
+}
+
+.teacher-item header div {
+    margin-left: 2.4rem;
+
+}
+
+.teacher-item header div strong {
+    font: 700 2.4rem Archivo;
+    display: block; /*o display inline ocupa parte da linha e deixa o outro elemento do lado, e o display block vai quebrar uma linha deixando a palavra Biologia em baixo */
+    color: var(--color-text-title);
+}
+
+.teacher-item header div span {
+    font-size: 1.6rem;
+    display: block;
+    margin-top: 0.4rem; /* só altera quando o display é block, se for inline ele não aceita */
+}
+
+.teacher-item > p {
+    padding:  0 2rem;
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+    text-align: justify;
+}
+
+.teacher-item footer {
+    padding: 3.2rem 2rem;
+    background: var(--color-box-footer);
+    border-top: 1px solid var(--color-line-in-white);
+    margin-top: 3.2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.teacher-item footer p {
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    color: var(--color-text-complement);
+}
+
+.teacher-item footer p strong {
+    font-size: 1.6rem;
+    color: var(--color-secondary);
+
+    display: block;
+}
+
+.teacher-item footer button {
+    width: 20rem;
+    height: 5.6rem;
+    background: var(--color-primary-darker);
+    color: var(--color-button-text);
+    border: 0;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    font: 700 1.4rem Archivo;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly; /*espaçamento constante entre os elementos*/
+
+    text-decoration: none; /* tira qualquer tipo de decoração que tiver no texto */
+
+    transition: background 0.2s;
+    margin-left: 1.6rem;
+}
+
+.teacher-item footer button:hover {
+    background: var(--color-primary-light);
+
+}
+
+@media (min-width:700px) { /* Quando o mínimo for de 700 pra cima, vai começar a adicionar coisas na minha page-study*/
+    #page-study #container {
+        max-width: 100vw; /* expandir a largura máxima quando 700+ */
+    }
+
+    .page-header .top-bar-container {
+        max-width: 1100px;
+    }
+
+    .page-header .header-content {
+        max-width: 740px;
+
+        margin: 0 auto; /* tira as margens em cima e em baixo e as laterais/propriedades continuam automáticas */
+        
+
+        flex: 1 1; /*todo o espaço da caixa seja preenchido */
+
+        padding-bottom: 48px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+    }
+    
+    .page-header .header-content strong {
+        max-width: 350px;
+        
+    }
+
+    .teacher-item header,
+    .teacher-item footer {
+        padding: 32px;
+        
+    }
+
+    #search-teachers {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* 4 colunas repetidas com 1fr */
+        gap: 16px; /* deixar espaço entre as bordas/lacunas */
+        /*position: absolute; /*para ficar absoluto em relação ao "pai", o header-content (pai) deve estar em position:relative */
+        bottom: -28px;       
+    }
+
+    #page-study main {
+        padding-bottom: 32px 0; /* aumenta o espaçamento entre o main e o header */
+        max-width: 740px;
+        margin: 0 auto;
+    }
+
+    #search-teachers .select-block {
+        margin-bottom: 0; /* remove as margens dos dois selects pra não atrapalhar o after de "hora" */
+        
+    }
+
+    .teacher-item > p { /* para pegar elementos do 1 nível no css, basta usar a > */
+        padding: 0 32px; /* aumentou o espaçamento nas laterais */
+    }
+
+    .teacher-item footer p strong {
+        display: initial; /* volta pro display inicial */
+        margin-left: 16px; /* desgruda o preço da "hora" */
+    }
+
+    .teacher-item footer button {
+        width: 245px;
+        font-size: 16px;
+        justify-content: center;
+    }
+
+    .teacher-item footer button img {
+        margin-right: 16px;
+
+    }
+}
